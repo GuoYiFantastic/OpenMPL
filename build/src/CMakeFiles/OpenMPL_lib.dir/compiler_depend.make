@@ -17963,6 +17963,8 @@ src/CMakeFiles/OpenMPL_lib.dir/SimpleMPL.cpp.o: ../src/SimpleMPL.cpp \
   ../thirdparty/Limbo/limbo/solvers/api/OpbWriter.h \
   ../src/globals.h \
   ../thirdparty/Limbo/limbo/solvers/api/minisatp_uti.h \
+  ../thirdparty/Limbo/limbo/algorithms/coloring/OPBgen.h \
+  ../thirdparty/Limbo/limbo/solvers/api/OpbApi.h \
   ../thirdparty/Limbo/limbo/algorithms/coloring/SDPColoringCsdp.h \
   ../thirdparty/Limbo/limbo/algorithms/coloring/BacktrackColoring.h \
   ../thirdparty/Limbo/limbo/algorithms/coloring/GreedyColoring.h \
@@ -17994,6 +17996,8 @@ src/CMakeFiles/OpenMPL_lib.dir/SimpleMPL.cpp.o: ../src/SimpleMPL.cpp \
 ../thirdparty/Limbo/limbo/algorithms/coloring/BacktrackColoring.h:
 
 ../thirdparty/Limbo/limbo/algorithms/coloring/SDPColoringCsdp.h:
+
+../thirdparty/Limbo/limbo/algorithms/coloring/OPBgen.h:
 
 ../thirdparty/Limbo/limbo/solvers/api/OpbWriter.h:
 
@@ -22260,6 +22264,8 @@ src/CMakeFiles/OpenMPL_lib.dir/SimpleMPL.cpp.o: ../src/SimpleMPL.cpp \
 /usr/local/include/boost/xpressive/detail/core/matcher/simple_repeat_matcher.hpp:
 
 /usr/local/include/boost/smart_ptr/detail/sp_counted_base_std_atomic.hpp:
+
+../thirdparty/Limbo/limbo/solvers/api/OpbApi.h:
 
 /usr/local/include/boost/type_traits/has_trivial_destructor.hpp:
 

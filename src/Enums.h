@@ -78,7 +78,8 @@ struct AlgorithmTypeEnum
 		DANCING_LINK = 6,
 		ILP_UPDATED_GUROBI = 7,
 		DANCING_LINK_OPT = 8,
-		SJTU = 9       // only valid when neurosat is available
+		SJTU = 9,       // only valid when neurosat is available
+		OPB = 10
     };
 };
 class AlgorithmType : public EnumExt<AlgorithmTypeEnum::EnumType>

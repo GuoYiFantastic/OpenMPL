@@ -761,122 +761,152 @@ namespace VerilogParser {
 #line 762 "/home/fantastic_na/OpenMPL/OpenMPL/build/thirdparty/Limbo/limbo/parsers/verilog/bison/VerilogParser.cc"
     break;
 
-  case 16: // param3: INPUT general_name_array
-#line 190 "VerilogParser.yy"
-                                 {driver.pin_declare_cbk(*(yystack_[0].value.generalNameArrayVal), kINPUT); delete (yystack_[0].value.generalNameArrayVal);}
+  case 16: // param2: '.' NAME '(' '{' general_name_array ',' '}' ')'
+#line 188 "VerilogParser.yy"
+                                                        {driver.wire_pin_cbk(*(yystack_[3].value.generalNameArrayVal), *(yystack_[6].value.stringVal)); delete (yystack_[6].value.stringVal); delete (yystack_[3].value.generalNameArrayVal);}
 #line 768 "/home/fantastic_na/OpenMPL/OpenMPL/build/thirdparty/Limbo/limbo/parsers/verilog/bison/VerilogParser.cc"
     break;
 
-  case 17: // param3: INPUT range general_name_array
+  case 17: // param3: INPUT general_name_array
 #line 191 "VerilogParser.yy"
-                                       {driver.pin_declare_cbk(*(yystack_[0].value.generalNameArrayVal), kINPUT, *(yystack_[1].value.rangeVal)); delete (yystack_[1].value.rangeVal); delete (yystack_[0].value.generalNameArrayVal);}
+                                 {driver.pin_declare_cbk(*(yystack_[0].value.generalNameArrayVal), kINPUT); delete (yystack_[0].value.generalNameArrayVal);}
 #line 774 "/home/fantastic_na/OpenMPL/OpenMPL/build/thirdparty/Limbo/limbo/parsers/verilog/bison/VerilogParser.cc"
     break;
 
-  case 18: // param3: INPUT REG range general_name_array
+  case 18: // param3: INPUT range general_name_array
 #line 192 "VerilogParser.yy"
-                                           {driver.pin_declare_cbk(*(yystack_[0].value.generalNameArrayVal), kINPUT|kREG, *(yystack_[1].value.rangeVal)); delete (yystack_[1].value.rangeVal); delete (yystack_[0].value.generalNameArrayVal);}
+                                       {driver.pin_declare_cbk(*(yystack_[0].value.generalNameArrayVal), kINPUT, *(yystack_[1].value.rangeVal)); delete (yystack_[1].value.rangeVal); delete (yystack_[0].value.generalNameArrayVal);}
 #line 780 "/home/fantastic_na/OpenMPL/OpenMPL/build/thirdparty/Limbo/limbo/parsers/verilog/bison/VerilogParser.cc"
     break;
 
-  case 19: // param3: INPUT REG general_name_array
+  case 19: // param3: INPUT REG range general_name_array
 #line 193 "VerilogParser.yy"
-                                     {driver.pin_declare_cbk(*(yystack_[0].value.generalNameArrayVal), kINPUT|kREG); delete (yystack_[0].value.generalNameArrayVal);}
+                                           {driver.pin_declare_cbk(*(yystack_[0].value.generalNameArrayVal), kINPUT|kREG, *(yystack_[1].value.rangeVal)); delete (yystack_[1].value.rangeVal); delete (yystack_[0].value.generalNameArrayVal);}
 #line 786 "/home/fantastic_na/OpenMPL/OpenMPL/build/thirdparty/Limbo/limbo/parsers/verilog/bison/VerilogParser.cc"
     break;
 
-  case 20: // param3: OUTPUT general_name_array
+  case 20: // param3: INPUT REG general_name_array
 #line 194 "VerilogParser.yy"
-                                  {driver.pin_declare_cbk(*(yystack_[0].value.generalNameArrayVal), kOUTPUT); delete (yystack_[0].value.generalNameArrayVal);}
+                                     {driver.pin_declare_cbk(*(yystack_[0].value.generalNameArrayVal), kINPUT|kREG); delete (yystack_[0].value.generalNameArrayVal);}
 #line 792 "/home/fantastic_na/OpenMPL/OpenMPL/build/thirdparty/Limbo/limbo/parsers/verilog/bison/VerilogParser.cc"
     break;
 
-  case 21: // param3: OUTPUT range general_name_array
+  case 21: // param3: OUTPUT general_name_array
 #line 195 "VerilogParser.yy"
-                                        {driver.pin_declare_cbk(*(yystack_[0].value.generalNameArrayVal), kOUTPUT, *(yystack_[1].value.rangeVal)); delete (yystack_[1].value.rangeVal); delete (yystack_[0].value.generalNameArrayVal);}
+                                  {driver.pin_declare_cbk(*(yystack_[0].value.generalNameArrayVal), kOUTPUT); delete (yystack_[0].value.generalNameArrayVal);}
 #line 798 "/home/fantastic_na/OpenMPL/OpenMPL/build/thirdparty/Limbo/limbo/parsers/verilog/bison/VerilogParser.cc"
     break;
 
-  case 22: // param3: OUTPUT REG range general_name_array
+  case 22: // param3: OUTPUT range general_name_array
 #line 196 "VerilogParser.yy"
-                                            {driver.pin_declare_cbk(*(yystack_[0].value.generalNameArrayVal), kOUTPUT|kREG, *(yystack_[1].value.rangeVal)); delete (yystack_[1].value.rangeVal); delete (yystack_[0].value.generalNameArrayVal);}
+                                        {driver.pin_declare_cbk(*(yystack_[0].value.generalNameArrayVal), kOUTPUT, *(yystack_[1].value.rangeVal)); delete (yystack_[1].value.rangeVal); delete (yystack_[0].value.generalNameArrayVal);}
 #line 804 "/home/fantastic_na/OpenMPL/OpenMPL/build/thirdparty/Limbo/limbo/parsers/verilog/bison/VerilogParser.cc"
     break;
 
-  case 23: // param3: OUTPUT REG general_name_array
+  case 23: // param3: OUTPUT REG range general_name_array
 #line 197 "VerilogParser.yy"
-                                      {driver.pin_declare_cbk(*(yystack_[0].value.generalNameArrayVal), kOUTPUT|kREG); delete (yystack_[0].value.generalNameArrayVal);}
+                                            {driver.pin_declare_cbk(*(yystack_[0].value.generalNameArrayVal), kOUTPUT|kREG, *(yystack_[1].value.rangeVal)); delete (yystack_[1].value.rangeVal); delete (yystack_[0].value.generalNameArrayVal);}
 #line 810 "/home/fantastic_na/OpenMPL/OpenMPL/build/thirdparty/Limbo/limbo/parsers/verilog/bison/VerilogParser.cc"
     break;
 
-  case 24: // param3: INOUT general_name_array
+  case 24: // param3: OUTPUT REG general_name_array
 #line 198 "VerilogParser.yy"
-                                 {driver.pin_declare_cbk(*(yystack_[0].value.generalNameArrayVal), kINPUT|kOUTPUT); delete (yystack_[0].value.generalNameArrayVal);}
+                                      {driver.pin_declare_cbk(*(yystack_[0].value.generalNameArrayVal), kOUTPUT|kREG); delete (yystack_[0].value.generalNameArrayVal);}
 #line 816 "/home/fantastic_na/OpenMPL/OpenMPL/build/thirdparty/Limbo/limbo/parsers/verilog/bison/VerilogParser.cc"
     break;
 
-  case 25: // param3: INOUT range general_name_array
+  case 25: // param3: INOUT general_name_array
 #line 199 "VerilogParser.yy"
-                                       {driver.pin_declare_cbk(*(yystack_[0].value.generalNameArrayVal), kINPUT|kOUTPUT, *(yystack_[1].value.rangeVal)); delete (yystack_[1].value.rangeVal); delete (yystack_[0].value.generalNameArrayVal);}
+                                 {driver.pin_declare_cbk(*(yystack_[0].value.generalNameArrayVal), kINPUT|kOUTPUT); delete (yystack_[0].value.generalNameArrayVal);}
 #line 822 "/home/fantastic_na/OpenMPL/OpenMPL/build/thirdparty/Limbo/limbo/parsers/verilog/bison/VerilogParser.cc"
     break;
 
-  case 26: // param3: INOUT REG range general_name_array
+  case 26: // param3: INOUT range general_name_array
 #line 200 "VerilogParser.yy"
-                                           {driver.pin_declare_cbk(*(yystack_[0].value.generalNameArrayVal), kINPUT|kOUTPUT|kREG, *(yystack_[1].value.rangeVal)); delete (yystack_[1].value.rangeVal); delete (yystack_[0].value.generalNameArrayVal);}
+                                       {driver.pin_declare_cbk(*(yystack_[0].value.generalNameArrayVal), kINPUT|kOUTPUT, *(yystack_[1].value.rangeVal)); delete (yystack_[1].value.rangeVal); delete (yystack_[0].value.generalNameArrayVal);}
 #line 828 "/home/fantastic_na/OpenMPL/OpenMPL/build/thirdparty/Limbo/limbo/parsers/verilog/bison/VerilogParser.cc"
     break;
 
-  case 27: // param3: INOUT REG general_name_array
+  case 27: // param3: INOUT REG range general_name_array
 #line 201 "VerilogParser.yy"
-                                     {driver.pin_declare_cbk(*(yystack_[0].value.generalNameArrayVal), kINPUT|kOUTPUT|kREG); delete (yystack_[0].value.generalNameArrayVal);}
+                                           {driver.pin_declare_cbk(*(yystack_[0].value.generalNameArrayVal), kINPUT|kOUTPUT|kREG, *(yystack_[1].value.rangeVal)); delete (yystack_[1].value.rangeVal); delete (yystack_[0].value.generalNameArrayVal);}
 #line 834 "/home/fantastic_na/OpenMPL/OpenMPL/build/thirdparty/Limbo/limbo/parsers/verilog/bison/VerilogParser.cc"
     break;
 
-  case 28: // param4: REG general_name_array
-#line 204 "VerilogParser.yy"
-                               {delete (yystack_[0].value.generalNameArrayVal);}
+  case 28: // param3: INOUT REG general_name_array
+#line 202 "VerilogParser.yy"
+                                     {driver.pin_declare_cbk(*(yystack_[0].value.generalNameArrayVal), kINPUT|kOUTPUT|kREG); delete (yystack_[0].value.generalNameArrayVal);}
 #line 840 "/home/fantastic_na/OpenMPL/OpenMPL/build/thirdparty/Limbo/limbo/parsers/verilog/bison/VerilogParser.cc"
     break;
 
-  case 29: // param4: REG range general_name_array
+  case 29: // param4: REG general_name_array
 #line 205 "VerilogParser.yy"
-                                     {delete (yystack_[1].value.rangeVal); delete (yystack_[0].value.generalNameArrayVal);}
+                               {delete (yystack_[0].value.generalNameArrayVal);}
 #line 846 "/home/fantastic_na/OpenMPL/OpenMPL/build/thirdparty/Limbo/limbo/parsers/verilog/bison/VerilogParser.cc"
     break;
 
-  case 30: // param5: WIRE general_name_array
-#line 208 "VerilogParser.yy"
-                                {driver.wire_declare_cbk(*(yystack_[0].value.generalNameArrayVal)); delete (yystack_[0].value.generalNameArrayVal);}
+  case 30: // param4: REG range general_name_array
+#line 206 "VerilogParser.yy"
+                                     {delete (yystack_[1].value.rangeVal); delete (yystack_[0].value.generalNameArrayVal);}
 #line 852 "/home/fantastic_na/OpenMPL/OpenMPL/build/thirdparty/Limbo/limbo/parsers/verilog/bison/VerilogParser.cc"
     break;
 
-  case 31: // param5: WIRE range general_name_array
+  case 31: // param5: WIRE general_name_array
 #line 209 "VerilogParser.yy"
-                                      {driver.wire_declare_cbk(*(yystack_[0].value.generalNameArrayVal), *(yystack_[1].value.rangeVal)); delete (yystack_[1].value.rangeVal); delete (yystack_[0].value.generalNameArrayVal);}
+                                {driver.wire_declare_cbk(*(yystack_[0].value.generalNameArrayVal)); delete (yystack_[0].value.generalNameArrayVal);}
 #line 858 "/home/fantastic_na/OpenMPL/OpenMPL/build/thirdparty/Limbo/limbo/parsers/verilog/bison/VerilogParser.cc"
     break;
 
-  case 32: // module_declare: MODULE NAME '(' ')' ';'
-#line 225 "VerilogParser.yy"
-                                                    {driver.module_name_cbk(*(yystack_[3].value.stringVal), GeneralNameArray()); delete (yystack_[3].value.stringVal);}
+  case 32: // param5: WIRE range general_name_array
+#line 210 "VerilogParser.yy"
+                                      {driver.wire_declare_cbk(*(yystack_[0].value.generalNameArrayVal), *(yystack_[1].value.rangeVal)); delete (yystack_[1].value.rangeVal); delete (yystack_[0].value.generalNameArrayVal);}
 #line 864 "/home/fantastic_na/OpenMPL/OpenMPL/build/thirdparty/Limbo/limbo/parsers/verilog/bison/VerilogParser.cc"
     break;
 
-  case 33: // module_declare: MODULE NAME '(' general_name_array ')' ';'
+  case 33: // module_declare: MODULE NAME '(' ')' ';'
 #line 226 "VerilogParser.yy"
-                                                           {driver.module_name_cbk(*(yystack_[4].value.stringVal), *(yystack_[2].value.generalNameArrayVal)); delete (yystack_[4].value.stringVal); delete (yystack_[2].value.generalNameArrayVal);}
+                                                    {driver.module_name_cbk(*(yystack_[3].value.stringVal), GeneralNameArray()); delete (yystack_[3].value.stringVal);}
 #line 870 "/home/fantastic_na/OpenMPL/OpenMPL/build/thirdparty/Limbo/limbo/parsers/verilog/bison/VerilogParser.cc"
     break;
 
-  case 40: // module_instance: NAME NAME '(' instance_params ')' ';'
-#line 240 "VerilogParser.yy"
-                                                       {driver.module_instance_cbk(*(yystack_[5].value.stringVal), *(yystack_[4].value.stringVal)); delete (yystack_[5].value.stringVal); delete (yystack_[4].value.stringVal);}
+  case 34: // module_declare: MODULE NAME '(' general_name_array ')' ';'
+#line 227 "VerilogParser.yy"
+                                                           {driver.module_name_cbk(*(yystack_[4].value.stringVal), *(yystack_[2].value.generalNameArrayVal)); delete (yystack_[4].value.stringVal); delete (yystack_[2].value.generalNameArrayVal);}
 #line 876 "/home/fantastic_na/OpenMPL/OpenMPL/build/thirdparty/Limbo/limbo/parsers/verilog/bison/VerilogParser.cc"
     break;
 
-  case 41: // module_instance: NAME NAME '[' NUM ']' '(' instance_params ')' ';'
-#line 241 "VerilogParser.yy"
+  case 35: // module_declare: MODULE NAME '(' INPUT general_name_array ',' OUTPUT general_name_array ')' ';'
+#line 228 "VerilogParser.yy"
+                                                                                               {driver.module_name_cbk(*(yystack_[8].value.stringVal), *(yystack_[5].value.generalNameArrayVal), *(yystack_[2].value.generalNameArrayVal)); delete (yystack_[8].value.stringVal); delete (yystack_[5].value.generalNameArrayVal); delete (yystack_[2].value.generalNameArrayVal);}
+#line 882 "/home/fantastic_na/OpenMPL/OpenMPL/build/thirdparty/Limbo/limbo/parsers/verilog/bison/VerilogParser.cc"
+    break;
+
+  case 36: // module_declare: MODULE NAME '(' OUTPUT general_name_array ',' INPUT general_name_array ')' ';'
+#line 229 "VerilogParser.yy"
+                                                                                               {driver.module_name_cbk(*(yystack_[8].value.stringVal), *(yystack_[2].value.generalNameArrayVal), *(yystack_[5].value.generalNameArrayVal)); delete (yystack_[8].value.stringVal); delete (yystack_[5].value.generalNameArrayVal); delete (yystack_[2].value.generalNameArrayVal);}
+#line 888 "/home/fantastic_na/OpenMPL/OpenMPL/build/thirdparty/Limbo/limbo/parsers/verilog/bison/VerilogParser.cc"
+    break;
+
+  case 37: // module_declare: MODULE NAME '(' INPUT general_name_array ')' ';'
+#line 230 "VerilogParser.yy"
+                                                                 {driver.module_name_cbk(*(yystack_[5].value.stringVal), *(yystack_[2].value.generalNameArrayVal), GeneralNameArray()); delete (yystack_[5].value.stringVal); delete (yystack_[2].value.generalNameArrayVal); }
+#line 894 "/home/fantastic_na/OpenMPL/OpenMPL/build/thirdparty/Limbo/limbo/parsers/verilog/bison/VerilogParser.cc"
+    break;
+
+  case 38: // module_declare: MODULE NAME '(' OUTPUT general_name_array ')' ';'
+#line 231 "VerilogParser.yy"
+                                                                  {driver.module_name_cbk(*(yystack_[5].value.stringVal), GeneralNameArray(), *(yystack_[2].value.generalNameArrayVal)); delete (yystack_[5].value.stringVal); delete (yystack_[2].value.generalNameArrayVal); }
+#line 900 "/home/fantastic_na/OpenMPL/OpenMPL/build/thirdparty/Limbo/limbo/parsers/verilog/bison/VerilogParser.cc"
+    break;
+
+  case 45: // module_instance: NAME NAME '(' instance_params ')' ';'
+#line 245 "VerilogParser.yy"
+                                                       {driver.module_instance_cbk(*(yystack_[5].value.stringVal), *(yystack_[4].value.stringVal)); delete (yystack_[5].value.stringVal); delete (yystack_[4].value.stringVal);}
+#line 906 "/home/fantastic_na/OpenMPL/OpenMPL/build/thirdparty/Limbo/limbo/parsers/verilog/bison/VerilogParser.cc"
+    break;
+
+  case 46: // module_instance: NAME NAME '[' NUM ']' '(' instance_params ')' ';'
+#line 246 "VerilogParser.yy"
                                                                    {
                /* append NUM to instance name */
                char buf[256];
@@ -886,35 +916,35 @@ namespace VerilogParser {
                delete (yystack_[8].value.stringVal); 
                delete (yystack_[7].value.stringVal);
                }
-#line 890 "/home/fantastic_na/OpenMPL/OpenMPL/build/thirdparty/Limbo/limbo/parsers/verilog/bison/VerilogParser.cc"
+#line 920 "/home/fantastic_na/OpenMPL/OpenMPL/build/thirdparty/Limbo/limbo/parsers/verilog/bison/VerilogParser.cc"
     break;
 
-  case 42: // assignment: ASSIGN NAME '=' NAME ';'
-#line 252 "VerilogParser.yy"
+  case 47: // assignment: ASSIGN NAME '=' NAME ';'
+#line 257 "VerilogParser.yy"
                                      {driver.assignment_cbk(*(yystack_[3].value.stringVal), Range(), *(yystack_[1].value.stringVal), Range()); delete (yystack_[3].value.stringVal); delete (yystack_[1].value.stringVal);}
-#line 896 "/home/fantastic_na/OpenMPL/OpenMPL/build/thirdparty/Limbo/limbo/parsers/verilog/bison/VerilogParser.cc"
+#line 926 "/home/fantastic_na/OpenMPL/OpenMPL/build/thirdparty/Limbo/limbo/parsers/verilog/bison/VerilogParser.cc"
     break;
 
-  case 43: // assignment: ASSIGN NAME range '=' NAME ';'
-#line 253 "VerilogParser.yy"
+  case 48: // assignment: ASSIGN NAME range '=' NAME ';'
+#line 258 "VerilogParser.yy"
                                            {driver.assignment_cbk(*(yystack_[4].value.stringVal), *(yystack_[3].value.rangeVal), *(yystack_[1].value.stringVal), Range()); delete (yystack_[4].value.stringVal); delete (yystack_[3].value.rangeVal); delete (yystack_[1].value.stringVal);}
-#line 902 "/home/fantastic_na/OpenMPL/OpenMPL/build/thirdparty/Limbo/limbo/parsers/verilog/bison/VerilogParser.cc"
+#line 932 "/home/fantastic_na/OpenMPL/OpenMPL/build/thirdparty/Limbo/limbo/parsers/verilog/bison/VerilogParser.cc"
     break;
 
-  case 44: // assignment: ASSIGN NAME '=' NAME range ';'
-#line 254 "VerilogParser.yy"
+  case 49: // assignment: ASSIGN NAME '=' NAME range ';'
+#line 259 "VerilogParser.yy"
                                            {driver.assignment_cbk(*(yystack_[4].value.stringVal), Range(), *(yystack_[2].value.stringVal), *(yystack_[1].value.rangeVal)); delete (yystack_[4].value.stringVal); delete (yystack_[2].value.stringVal); delete (yystack_[1].value.rangeVal);}
-#line 908 "/home/fantastic_na/OpenMPL/OpenMPL/build/thirdparty/Limbo/limbo/parsers/verilog/bison/VerilogParser.cc"
+#line 938 "/home/fantastic_na/OpenMPL/OpenMPL/build/thirdparty/Limbo/limbo/parsers/verilog/bison/VerilogParser.cc"
     break;
 
-  case 45: // assignment: ASSIGN NAME range '=' NAME range ';'
-#line 255 "VerilogParser.yy"
+  case 50: // assignment: ASSIGN NAME range '=' NAME range ';'
+#line 260 "VerilogParser.yy"
                                                  {driver.assignment_cbk(*(yystack_[5].value.stringVal), *(yystack_[4].value.rangeVal), *(yystack_[2].value.stringVal), *(yystack_[1].value.rangeVal)); delete (yystack_[5].value.stringVal); delete (yystack_[4].value.rangeVal); delete (yystack_[2].value.stringVal); delete (yystack_[1].value.rangeVal);}
-#line 914 "/home/fantastic_na/OpenMPL/OpenMPL/build/thirdparty/Limbo/limbo/parsers/verilog/bison/VerilogParser.cc"
+#line 944 "/home/fantastic_na/OpenMPL/OpenMPL/build/thirdparty/Limbo/limbo/parsers/verilog/bison/VerilogParser.cc"
     break;
 
 
-#line 918 "/home/fantastic_na/OpenMPL/OpenMPL/build/thirdparty/Limbo/limbo/parsers/verilog/bison/VerilogParser.cc"
+#line 948 "/home/fantastic_na/OpenMPL/OpenMPL/build/thirdparty/Limbo/limbo/parsers/verilog/bison/VerilogParser.cc"
 
             default:
               break;
@@ -1266,92 +1296,100 @@ namespace VerilogParser {
   }
 
 
-  const signed char Parser::yypact_ninf_ = -24;
+  const signed char Parser::yypact_ninf_ = -25;
 
   const signed char Parser::yytable_ninf_ = -1;
 
   const signed char
   Parser::yypact_[] =
   {
-     -24,     9,   -24,    -3,   -24,   -24,     2,    52,    -9,    -2,
-     -24,    -8,    32,    37,     5,     5,    34,    11,    40,    43,
-     -24,   -24,   -24,    51,    45,     3,   -20,     5,    70,    72,
-      54,     5,    72,    54,     5,    72,    54,    72,    54,    72,
-      54,   -23,   -24,   -24,   -24,   -24,   -24,    74,    50,    75,
-      58,    72,    54,    29,    54,    72,    54,    54,    72,    54,
-      54,    54,    54,    79,    55,    51,   -24,    64,    83,   -24,
-      42,    54,    84,   -24,    54,    54,    -1,    86,   -24,    63,
-      66,    58,    67,    71,   -24,    68,     4,    58,    28,   -24,
-     -24,   -24,   -24,   -24,    69,    44,   -22,    73,    76,    77,
-      80,   -24,    72,   -24,    78,   -24,    82,   -24,   -24,   -24,
-     -24,    30,   -24,   -24,    85,   -24
+     -25,    11,   -25,    -5,   -25,   -25,   -14,    62,    36,    28,
+     -25,    31,    43,    44,     1,     1,    45,    39,    49,    70,
+     -25,   -25,   -25,    40,    55,    55,    71,    35,   -23,     1,
+      80,    55,    75,     1,    55,    75,     1,    55,    75,    55,
+      75,    55,    75,   -24,   -25,   -25,   -25,   -25,    56,    61,
+     -25,    92,    72,    97,    79,    55,    75,     9,    75,    55,
+      75,    75,    55,    75,    75,    75,    75,   100,    76,    48,
+      78,    73,    81,    40,   -25,    83,   105,   -25,    63,    75,
+     106,   -25,    75,    75,   -22,   108,    55,   -25,    55,   -25,
+     -25,    88,    89,    79,    86,    94,   -25,    90,   -20,    65,
+      67,    79,    10,   -25,   -25,   -25,   -25,   -25,    91,    95,
+      96,    69,    30,   101,   102,   103,   104,   -25,    55,   -25,
+     -25,   -25,   107,   -25,   109,   -25,   -25,   -25,   -25,    52,
+     -25,   -25,    -9,   111,   112,   -25,   -25
   };
 
   const signed char
   Parser::yydefact_[] =
   {
-      51,     0,     1,     0,    46,    52,     0,     0,     0,     0,
-      50,     0,     0,     0,     0,     0,     0,     0,     0,     0,
-      47,    48,    49,     4,     0,     0,     0,     0,     0,     0,
-      16,     0,     0,    20,     0,     0,    24,     0,    28,     0,
-      30,     0,    34,    35,    36,     5,    32,     0,     0,     0,
-      37,     0,    19,     0,    17,     0,    23,    21,     0,    27,
-      25,    29,    31,     0,     0,     6,    33,     0,     0,    38,
-       0,    18,     0,     3,    22,    26,     0,     0,     7,     0,
-       0,     0,     0,     0,    42,     0,     0,    37,     0,    39,
-      40,     2,    44,    43,     0,     0,     0,     0,     0,     0,
-       0,    10,     0,    45,     0,     8,     0,    11,    12,    13,
-      14,     0,    41,     9,     0,    15
+      56,     0,     1,     0,    51,    57,     0,     0,     0,     0,
+      55,     0,     0,     0,     0,     0,     0,     0,     0,     0,
+      52,    53,    54,     4,     0,     0,     0,     0,     0,     0,
+       0,     0,    17,     0,     0,    21,     0,     0,    25,     0,
+      29,     0,    31,     0,    39,    40,    41,     5,     0,     0,
+      33,     0,     0,     0,    42,     0,    20,     0,    18,     0,
+      24,    22,     0,    28,    26,    30,    32,     0,     0,     0,
+       0,     0,     0,     6,    34,     0,     0,    43,     0,    19,
+       0,     3,    23,    27,     0,     0,     0,    37,     0,    38,
+       7,     0,     0,     0,     0,     0,    47,     0,     0,     0,
+       0,    42,     0,    44,    45,     2,    49,    48,     0,     0,
+       0,     0,     0,     0,     0,     0,     0,    10,     0,    50,
+      35,    36,     0,     8,     0,    11,    12,    13,    14,     0,
+      46,     9,     0,     0,     0,    15,    16
   };
 
   const signed char
   Parser::yypgoto_[] =
   {
-     -24,    18,   -11,    21,   -24,   -24,   -24,   -24,   -24,    23,
-     -24,   -24,   -24,   -24,   -24
+     -25,    20,   -11,    34,   -25,   -25,   -25,   -25,   -25,    27,
+     -25,   -25,   -25,   -25,   -25
   };
 
   const signed char
   Parser::yydefgoto_[] =
   {
-       0,    29,    25,    69,    17,    18,    19,     4,    20,    70,
+       0,    31,    27,    77,    17,    18,    19,     4,    20,    78,
       21,    22,     7,     5,     1
   };
 
-  const signed char
+  const unsigned char
   Parser::yytable_[] =
   {
-      30,    33,    36,    38,    40,    23,    23,    28,    28,     2,
-      49,     6,    26,    27,   105,    50,    52,    63,    54,    23,
-      56,    57,    28,    59,    60,     3,    61,    24,    62,    28,
-      32,    35,    37,    39,    28,    28,    47,     8,    84,    48,
-      71,    45,    96,    93,    74,    51,    23,    75,    41,    55,
-      42,    23,    58,    31,    97,    98,    99,   100,    34,    64,
-      72,    73,    28,    47,   101,   102,     9,    28,   114,    10,
-      11,    12,    13,    14,    15,    81,    16,    81,    82,    43,
-     104,    28,    44,    78,    46,    53,    23,    47,    65,    66,
-      67,   111,    68,    76,    85,    77,    79,    80,    87,    83,
-      86,    88,    89,    91,    94,     0,    90,    92,   103,   107,
-      95,     0,   108,   109,   106,     0,   110,   112,   113,     0,
-       0,   115
+      32,    35,    38,    40,    42,    73,    30,    53,    30,     6,
+      30,     2,    54,    48,    49,    23,    67,    96,    56,   107,
+      58,     8,    60,    61,   112,    63,    64,     3,    65,   134,
+      66,    30,    34,    37,    39,    41,   113,   114,   115,   116,
+      80,    81,    28,    47,    79,    23,   117,   118,    82,    55,
+      23,    83,    29,    59,    24,    25,    62,    23,    23,    43,
+      30,    30,    73,    68,    33,    36,   123,    86,    51,    23,
+      30,    52,    26,    30,    30,    99,     9,   100,    44,    10,
+      11,    12,    13,    14,    15,   132,    16,    73,    45,    69,
+     133,    88,    70,    90,    71,    57,    93,    72,    51,    94,
+      51,   109,    93,   110,    97,   122,    73,   129,    51,    46,
+      50,    74,    75,    76,    84,    91,    85,    87,   108,    92,
+      89,    95,    98,   101,   102,   104,   105,   103,   111,   106,
+     119,     0,   124,     0,   120,   121,     0,   125,   126,   127,
+     128,     0,     0,     0,     0,   131,   130,   135,   136
   };
 
   const signed char
   Parser::yycheck_[] =
   {
-      11,    12,    13,    14,    15,    14,    14,    30,    30,     0,
-      30,    14,    14,    21,    36,    35,    27,    40,    29,    14,
-      31,    32,    30,    34,    35,    16,    37,    36,    39,    30,
-      12,    13,    14,    15,    30,    30,    33,    35,    39,    36,
-      51,    23,    14,    39,    55,    27,    14,    58,    14,    31,
-      39,    14,    34,    21,    26,    27,    28,    29,    21,    41,
-      31,    32,    30,    33,    36,    37,    14,    30,    38,    17,
-      18,    19,    20,    21,    22,    33,    24,    33,    36,    39,
-      36,    30,    39,    65,    39,    15,    14,    33,    14,    39,
-      15,   102,    34,    14,    76,    40,    32,    14,    35,    15,
-      14,    35,    81,    32,    86,    -1,    39,    39,    39,    36,
-      87,    -1,    36,    36,    96,    -1,    36,    39,    36,    -1,
-      -1,    36
+      11,    12,    13,    14,    15,    14,    30,    30,    30,    14,
+      30,     0,    35,    24,    25,    14,    40,    39,    29,    39,
+      31,    35,    33,    34,    14,    36,    37,    16,    39,    38,
+      41,    30,    12,    13,    14,    15,    26,    27,    28,    29,
+      31,    32,    14,    23,    55,    14,    36,    37,    59,    29,
+      14,    62,    21,    33,    18,    19,    36,    14,    14,    14,
+      30,    30,    14,    43,    21,    21,    36,    19,    33,    14,
+      30,    36,    36,    30,    30,    86,    14,    88,    39,    17,
+      18,    19,    20,    21,    22,    33,    24,    14,    39,    33,
+      38,    18,    36,    73,    33,    15,    33,    36,    33,    36,
+      33,    36,    33,    36,    84,    36,    14,   118,    33,    39,
+      39,    39,    15,    34,    14,    32,    40,    39,    98,    14,
+      39,    15,    14,    35,    35,    39,    32,    93,   101,    39,
+      39,    -1,   112,    -1,    39,    39,    -1,    36,    36,    36,
+      36,    -1,    -1,    -1,    -1,    36,    39,    36,    36
   };
 
   const signed char
@@ -1359,38 +1397,40 @@ namespace VerilogParser {
   {
        0,    55,     0,    16,    48,    54,    14,    53,    35,    14,
       17,    18,    19,    20,    21,    22,    24,    45,    46,    47,
-      49,    51,    52,    14,    36,    43,    14,    21,    30,    42,
-      43,    21,    42,    43,    21,    42,    43,    42,    43,    42,
-      43,    14,    39,    39,    39,    42,    39,    33,    36,    30,
-      35,    42,    43,    15,    43,    42,    43,    43,    42,    43,
-      43,    43,    43,    40,    42,    14,    39,    15,    34,    44,
-      50,    43,    31,    32,    43,    43,    14,    40,    42,    32,
-      14,    33,    36,    15,    39,    42,    14,    35,    35,    44,
-      39,    32,    39,    39,    42,    50,    14,    26,    27,    28,
-      29,    36,    37,    39,    36,    36,    42,    36,    36,    36,
-      36,    43,    39,    36,    38,    36
+      49,    51,    52,    14,    18,    19,    36,    43,    14,    21,
+      30,    42,    43,    21,    42,    43,    21,    42,    43,    42,
+      43,    42,    43,    14,    39,    39,    39,    42,    43,    43,
+      39,    33,    36,    30,    35,    42,    43,    15,    43,    42,
+      43,    43,    42,    43,    43,    43,    43,    40,    42,    33,
+      36,    33,    36,    14,    39,    15,    34,    44,    50,    43,
+      31,    32,    43,    43,    14,    40,    19,    39,    18,    39,
+      42,    32,    14,    33,    36,    15,    39,    42,    14,    43,
+      43,    35,    35,    44,    39,    32,    39,    39,    42,    36,
+      36,    50,    14,    26,    27,    28,    29,    36,    37,    39,
+      39,    39,    36,    36,    42,    36,    36,    36,    36,    43,
+      39,    36,    33,    38,    38,    36,    36
   };
 
   const signed char
   Parser::yyr1_[] =
   {
        0,    41,    42,    42,    43,    43,    43,    43,    44,    44,
-      44,    44,    44,    44,    44,    44,    45,    45,    45,    45,
-      45,    45,    45,    45,    45,    45,    45,    45,    46,    46,
-      47,    47,    48,    48,    49,    49,    49,    50,    50,    50,
-      51,    51,    52,    52,    52,    52,    53,    53,    53,    53,
-      54,    55,    55
+      44,    44,    44,    44,    44,    44,    44,    45,    45,    45,
+      45,    45,    45,    45,    45,    45,    45,    45,    45,    46,
+      46,    47,    47,    48,    48,    48,    48,    48,    48,    49,
+      49,    49,    50,    50,    50,    51,    51,    52,    52,    52,
+      52,    53,    53,    53,    53,    54,    55,    55
   };
 
   const signed char
   Parser::yyr2_[] =
   {
        0,     2,     5,     3,     1,     2,     3,     4,     5,     6,
-       4,     5,     5,     5,     5,     7,     2,     3,     4,     3,
-       2,     3,     4,     3,     2,     3,     4,     3,     2,     3,
-       2,     3,     5,     6,     2,     2,     2,     0,     1,     3,
-       6,     9,     5,     6,     6,     7,     0,     2,     2,     2,
-       3,     0,     2
+       4,     5,     5,     5,     5,     7,     8,     2,     3,     4,
+       3,     2,     3,     4,     3,     2,     3,     4,     3,     2,
+       3,     2,     3,     5,     6,    10,    10,     7,     7,     2,
+       2,     2,     0,     1,     3,     6,     9,     5,     6,     6,
+       7,     0,     2,     2,     2,     3,     0,     2
   };
 
 
@@ -1418,11 +1458,11 @@ namespace VerilogParser {
   Parser::yyrline_[] =
   {
        0,   134,   134,   135,   152,   156,   161,   166,   180,   181,
-     182,   183,   184,   185,   186,   187,   190,   191,   192,   193,
-     194,   195,   196,   197,   198,   199,   200,   201,   204,   205,
-     208,   209,   225,   226,   229,   230,   231,   235,   236,   237,
-     240,   241,   252,   253,   254,   255,   257,   258,   259,   260,
-     264,   267,   268
+     182,   183,   184,   185,   186,   187,   188,   191,   192,   193,
+     194,   195,   196,   197,   198,   199,   200,   201,   202,   205,
+     206,   209,   210,   226,   227,   228,   229,   230,   231,   234,
+     235,   236,   240,   241,   242,   245,   246,   257,   258,   259,
+     260,   262,   263,   264,   265,   269,   272,   273
   };
 
   void
@@ -1503,9 +1543,9 @@ namespace VerilogParser {
   }
 
 } // VerilogParser
-#line 1507 "/home/fantastic_na/OpenMPL/OpenMPL/build/thirdparty/Limbo/limbo/parsers/verilog/bison/VerilogParser.cc"
+#line 1547 "/home/fantastic_na/OpenMPL/OpenMPL/build/thirdparty/Limbo/limbo/parsers/verilog/bison/VerilogParser.cc"
 
-#line 273 "VerilogParser.yy"
+#line 278 "VerilogParser.yy"
  /*** Additional Code ***/
 
 void VerilogParser::Parser::error(const Parser::location_type& l,

@@ -30,6 +30,7 @@
 #if NEUROSAT == 1
 #include <limbo/algorithms/coloring/SJTUcoloring.h>
 #endif
+#include <limbo/algorithms/coloring/OPBgen.h>
 #if GUROBI == 1
 #include <limbo/algorithms/coloring/ILPColoring.h>
 #include <limbo/algorithms/coloring/ILPColoringUpdated.h>
@@ -2089,6 +2090,9 @@ lac::Coloring<SimpleMPL::graph_type>* SimpleMPL::create_coloring_solver(SimpleMP
 				pcs = new lac::MISColoring<graph_type> (sg); 
 				break;
 	#endif
+			case AlgorithmTypeEnum::OPB:
+				pcs = new lac::OPBgen<graph_type> (sg); 
+				break;
 	#if LEMONCBC == 1
 			case AlgorithmTypeEnum::ILP_CBC:
 				pcs = new lac::ILPColoringLemonCbc<graph_type> (sg); 

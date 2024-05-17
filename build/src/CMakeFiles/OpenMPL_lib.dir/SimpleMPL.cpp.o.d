@@ -3195,6 +3195,8 @@ src/CMakeFiles/OpenMPL_lib.dir/SimpleMPL.cpp.o: \
  /home/fantastic_na/OpenMPL/OpenMPL/thirdparty/Limbo/limbo/solvers/api/OpbWriter.h \
  /home/fantastic_na/OpenMPL/OpenMPL/src/globals.h \
  /home/fantastic_na/OpenMPL/OpenMPL/thirdparty/Limbo/limbo/solvers/api/minisatp_uti.h \
+ /home/fantastic_na/OpenMPL/OpenMPL/thirdparty/Limbo/limbo/algorithms/coloring/OPBgen.h \
+ /home/fantastic_na/OpenMPL/OpenMPL/thirdparty/Limbo/limbo/solvers/api/OpbApi.h \
  /home/fantastic_na/OpenMPL/OpenMPL/thirdparty/Limbo/limbo/algorithms/coloring/SDPColoringCsdp.h \
  /home/fantastic_na/OpenMPL/OpenMPL/thirdparty/Limbo/limbo/algorithms/coloring/BacktrackColoring.h \
  /home/fantastic_na/OpenMPL/OpenMPL/thirdparty/Limbo/limbo/algorithms/coloring/GreedyColoring.h \

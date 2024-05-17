@@ -318,6 +318,19 @@ dlx/fast:
 .PHONY : dlx/fast
 
 #=============================================================================
+# Target rules for targets named lef_objlib
+
+# Build rule for target.
+lef_objlib: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 lef_objlib
+.PHONY : lef_objlib
+
+# fast build rule for target.
+lef_objlib/fast:
+	$(MAKE) $(MAKESILENT) -f thirdparty/Limbo/limbo/thirdparty/lefdef/5.8/lef/CMakeFiles/lef_objlib.dir/build.make thirdparty/Limbo/limbo/thirdparty/lefdef/5.8/lef/CMakeFiles/lef_objlib.dir/build
+.PHONY : lef_objlib/fast
+
+#=============================================================================
 # Target rules for targets named lef
 
 # Build rule for target.
@@ -407,6 +420,19 @@ lefwrite: cmake_check_build_system
 lefwrite/fast:
 	$(MAKE) $(MAKESILENT) -f thirdparty/Limbo/limbo/thirdparty/lefdef/5.8/lef/CMakeFiles/lefwrite.dir/build.make thirdparty/Limbo/limbo/thirdparty/lefdef/5.8/lef/CMakeFiles/lefwrite.dir/build
 .PHONY : lefwrite/fast
+
+#=============================================================================
+# Target rules for targets named def_objlib
+
+# Build rule for target.
+def_objlib: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 def_objlib
+.PHONY : def_objlib
+
+# fast build rule for target.
+def_objlib/fast:
+	$(MAKE) $(MAKESILENT) -f thirdparty/Limbo/limbo/thirdparty/lefdef/5.8/def/CMakeFiles/def_objlib.dir/build.make thirdparty/Limbo/limbo/thirdparty/lefdef/5.8/def/CMakeFiles/def_objlib.dir/build
+.PHONY : def_objlib/fast
 
 #=============================================================================
 # Target rules for targets named def
@@ -591,19 +617,6 @@ defparser/fast:
 .PHONY : defparser/fast
 
 #=============================================================================
-# Target rules for targets named defparseradapt_uncombined
-
-# Build rule for target.
-defparseradapt_uncombined: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 defparseradapt_uncombined
-.PHONY : defparseradapt_uncombined
-
-# fast build rule for target.
-defparseradapt_uncombined/fast:
-	$(MAKE) $(MAKESILENT) -f thirdparty/Limbo/limbo/parsers/def/adapt/CMakeFiles/defparseradapt_uncombined.dir/build.make thirdparty/Limbo/limbo/parsers/def/adapt/CMakeFiles/defparseradapt_uncombined.dir/build
-.PHONY : defparseradapt_uncombined/fast
-
-#=============================================================================
 # Target rules for targets named defparseradapt
 
 # Build rule for target.
@@ -680,19 +693,6 @@ lefparser: cmake_check_build_system
 lefparser/fast:
 	$(MAKE) $(MAKESILENT) -f thirdparty/Limbo/limbo/parsers/lef/bison/CMakeFiles/lefparser.dir/build.make thirdparty/Limbo/limbo/parsers/lef/bison/CMakeFiles/lefparser.dir/build
 .PHONY : lefparser/fast
-
-#=============================================================================
-# Target rules for targets named lefparseradapt_uncombined
-
-# Build rule for target.
-lefparseradapt_uncombined: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 lefparseradapt_uncombined
-.PHONY : lefparseradapt_uncombined
-
-# fast build rule for target.
-lefparseradapt_uncombined/fast:
-	$(MAKE) $(MAKESILENT) -f thirdparty/Limbo/limbo/parsers/lef/adapt/CMakeFiles/lefparseradapt_uncombined.dir/build.make thirdparty/Limbo/limbo/parsers/lef/adapt/CMakeFiles/lefparseradapt_uncombined.dir/build
-.PHONY : lefparseradapt_uncombined/fast
 
 #=============================================================================
 # Target rules for targets named lefparseradapt
@@ -785,9 +785,7 @@ help:
 	@echo "... list_install_components"
 	@echo "... rebuild_cache"
 	@echo "... check"
-	@echo "... defparseradapt"
 	@echo "... dist"
-	@echo "... lefparseradapt"
 	@echo "... openblas_target"
 	@echo "... CThreadPool_example"
 	@echo "... CThreadPool_thpool"
@@ -804,9 +802,10 @@ help:
 	@echo "... csdp"
 	@echo "... csdp_test"
 	@echo "... def"
+	@echo "... def_objlib"
 	@echo "... defdiff"
 	@echo "... defparser"
-	@echo "... defparseradapt_uncombined"
+	@echo "... defparseradapt"
 	@echo "... defrw"
 	@echo "... defwrite"
 	@echo "... defzlib"
@@ -818,9 +817,10 @@ help:
 	@echo "... graphtoprob"
 	@echo "... gzstream"
 	@echo "... lef"
+	@echo "... lef_objlib"
 	@echo "... lefdiff"
 	@echo "... lefparser"
-	@echo "... lefparseradapt_uncombined"
+	@echo "... lefparseradapt"
 	@echo "... lefrw"
 	@echo "... lefwrite"
 	@echo "... lefzlib"

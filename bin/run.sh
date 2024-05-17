@@ -27,13 +27,13 @@
 mkdir -p benchout
 ./OpenMPL \
     -shape POLYGON \
-    -in ISCAS_benchmark/sim_c4.gds \
+    -in big/ispd19_test10_flatten.gds \
     -out tmp/sim_c2.gds \
     -simplify_level 3 \
     -coloring_distance 130 \
 	-uncolor_layer 101 \
     -color_num 3 \
-    -algo SJTU\
+    -algo OPB\
     -thread_num 1 \
     -use_stitch \
     -gen_stitch \

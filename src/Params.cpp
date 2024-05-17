@@ -75,6 +75,10 @@ bool CmdParser::operator()(int argc, char** argv)
             mplPrint(kWARN, "SJTU is not available without NEUROSAT, set to default algorithm\n");
 #endif  
         }
+        else if(limbo::iequals(algo_str, "OPB"))
+        {
+            parms.algo = AlgorithmTypeEnum::OPB;
+        }
         else if (limbo::iequals(algo_str, "ILP_UPDATED")) 
         {
 #if GUROBI == 1
